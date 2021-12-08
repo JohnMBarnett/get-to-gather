@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
+    email: "",
   });
 
   const handleChange = (e) => {
@@ -18,7 +19,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login_background login_register_background">
+    <div className="register_background login_register_background">
       <form onSubmit={handleSubmit} className="formContainer">
         <input
           name="username"
@@ -34,10 +35,17 @@ const LoginPage = () => {
           value={credentials.password}
           onChange={handleChange}
         />
-        <button className="form_button">Sign In</button>
+        <input
+          name="email"
+          type="email"
+          placeholder="email:"
+          value={credentials.email}
+          onChange={handleChange}
+        />
+        <button className="form_button">Create Account</button>
       </form>
     </div>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

@@ -188,14 +188,17 @@ header {
   width: 100%;
   padding: 1rem;
   z-index: 100000;
-}
-
-header.sticky {
-  background: rgba(251, 250, 245, 0.5);
+  margin-bottom: 1rem;
+  padding: 2rem;
+  background-color: #fbfaf5c7;
 }
 
 header h1 {
   font-size: 4rem;
+}
+
+.title :hover {
+  cursor: pointer;
 }
 
 /*
@@ -215,6 +218,7 @@ Home Page content
   height: 80rem;
   background-repeat: no-repeat;
   background-image: url("../images/home1.jpg");
+  margin-top: 10rem;
 }
 
 .second_image {
@@ -241,4 +245,66 @@ Home Page content
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
+}
+
+/*
+****************************
+Login/Register
+****************************
+*/
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 40rem;
+  background-color: rgba(53, 53, 53, 0.6);
+  border-radius: 50px;
+}
+
+.formContainer input,
+input::placeholder {
+  color: #d1d1d1;
+  background-color: #222222;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  padding: 1rem;
+  border: none;
+}
+
+button.form_button {
+  padding: 1rem;
+  width: 70%;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  border: none;
+  color: #d1d1d1;
+  background-color: #222222;
+  box-shadow: inset 0 0 0 0 #525252;
+  transition: ease-out 0.4s;
+  font-size: 2rem;
+  outline: none;
+}
+
+button.form_button:hover {
+  cursor: pointer;
+  box-shadow: inset 300px 0 0 0 #525252;
+}
+
+.login_register_background {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.login_background {
+  background-image: url("../images/hannah-busing-Zyx1bK9mqmA-unsplash\ \(1\).jpg");
+}
+
+.register_background {
+  background-image: url("../images/elevate-lecgcxzqT04-unsplash.jpg");
 }

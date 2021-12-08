@@ -1,18 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
     <header>
-      <h1>GTG .</h1>
+      <div onClick={handleClick} className="title">
+        <h1>GTG .</h1>
+      </div>
       <nav>
-        <a href="/#" className="hover_effect">
+        <a href="/login" className="hover_effect">
           Login
         </a>
-        <a href="/#" className="hover_effect">
+        <span>|</span>
+        <a href="/register" className="hover_effect">
           Register
-        </a>
-        <a href="/#" className="hover_effect">
-          About
         </a>
       </nav>
     </header>
