@@ -11,6 +11,16 @@ router.get("/", (req, res, next) => {
     });
 });
 
+router.get("/:id", (req, res, next) => {
+  Events.getUserEvents(req.params.id)
+    .then((event) => {
+      res.status(200).json(event);
+    })
+    .catch((err) => {
+      next({ status: 500, message: err });
+    });
+});
+
 router.post("/", (req, res, next) => {
   Events.createEvent(req.body)
     .then((newEvent) => {
