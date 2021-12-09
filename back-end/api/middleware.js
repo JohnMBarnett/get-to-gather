@@ -10,7 +10,7 @@ const validateBody = (req, res, next) => {
   if (!test.username) {
     return res.status(401).json({ message: "username and password required" });
   }
-  
+
   next();
 };
 
