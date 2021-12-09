@@ -1,4 +1,5 @@
 const db = require("../../../data/db-config");
+const Events = require("../events/events-model");
 
 const getAllUsers = () => {
   return db("users");
@@ -14,8 +15,13 @@ const getBy = async (filter) => {
 };
 
 const getById = async (id) => {
-  const user = await db("users").where("user_id", id);
-  return user;
+  const eventsArr = await Events.getUserEvents(id);
+  const user = await db("users").where("user_id", id).first();
+
+  let completedUser = user;
+  completedUser.user_events = eventsArr;
+
+  return completedUser;
 };
 
 const updateUser = async (id, updatedUser) => {
