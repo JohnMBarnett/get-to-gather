@@ -11,15 +11,11 @@ const Header = () => {
   return (
     <header>
       <div onClick={handleClick} className="title">
-        <h1>GTG .</h1>
+        <button>GTG .</button>
       </div>
       <nav>
         <a href="/login" className="hover_effect">
           Login
-        </a>
-        <span>|</span>
-        <a href="/register" className="hover_effect">
-          Register
         </a>
       </nav>
     </header>
